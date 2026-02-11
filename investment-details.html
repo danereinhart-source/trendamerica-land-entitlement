@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Structure | TrendAmerica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-blue: #1a4b8c;
+            --dark-blue: #0d2847;
+            --accent-blue: #2d7dd2;
+            --gold: #c9a227;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --dark-gray: #1f2937;
+        }
+        body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: var(--dark-gray); }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        header {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon {
+            width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 800; font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--primary-blue); }
+        .logo-text span { color: var(--gold); }
+        .back-btn {
+            background: var(--primary-blue); color: white;
+            padding: 10px 25px; border-radius: 5px;
+            text-decoration: none; font-weight: 600;
+        }
+        .back-btn:hover { background: var(--dark-blue); }
+
+        .invest-hero {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: white; padding: 80px 5%; text-align: center;
+        }
+        .invest-hero h1 { font-size: 3rem; margin-bottom: 15px; }
+        .invest-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        .highlight-banner {
+            background: var(--gold);
+            padding: 40px 5%;
+            text-align: center;
+        }
+        .highlight-banner h2 {
+            color: var(--dark-blue);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .highlight-banner p {
+            color: var(--dark-blue);
+            font-size: 1.2rem;
+        }
+
+        .invest-content {
+            max-width: 1000px; margin: 0 auto; padding: 60px 5%;
+        }
+
+        .invest-section { margin-bottom: 50px; }
+        .invest-section h2 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--gold);
+        }
+        .invest-section p { color: var(--gray); line-height: 1.8; margin-bottom: 15px; }
+        .invest-section ul { color: var(--gray); margin-left: 20px; margin-bottom: 15px; }
+        .invest-section li { margin-bottom: 10px; }
+
+        .key-terms {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .term-card {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            border-top: 4px solid var(--primary-blue);
+        }
+        .term-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .term-card p { color: var(--gray); margin: 0; }
+        .term-card .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-top: 10px;
+        }
+
+        .funding-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .funding-table th {
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .funding-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .funding-table tr:nth-child(even) { background: var(--light-gray); }
+        .funding-table tr:last-child td { border-bottom: none; }
+
+        .info-box {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+            margin: 30px 0;
+        }
+        .info-box h3 { color: var(--primary-blue); margin-bottom: 15px; }
+        .info-box p { color: var(--gray); margin-bottom: 10px; }
+        .info-box p:last-child { margin-bottom: 0; }
+
+        .stakeholder-rights {
+            background: var(--dark-blue);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        .stakeholder-rights h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .stakeholder-rights ul {
+            margin-left: 20px;
+        }
+        .stakeholder-rights li {
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background: var(--light-gray);
+            margin-top: 60px;
+            border-radius: 10px;
+        }
+        .cta-section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .btn:hover { background: var(--dark-blue); }
+
+        footer {
+            background: var(--dark-gray); color: white;
+            padding: 30px 5%; text-align: center;
+        }
+        footer p { opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            .key-terms { grid-template-columns: 1fr; }
+            .funding-table { font-size: 0.9rem; }
+            .funding-table th, .funding-table td { padding: 12px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">TA</div>
+            <div class="logo-text">TREND<span>AMERICA</span></div>
+        </a>
+        <a href="index.html#invest" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Overview</a>
+    </header>
+
+    <section class="invest-hero">
+        <h1>Stakeholder Investment Structure</h1>
+        <p>Full transparency on how we structure our investments to maximize returns while protecting stakeholder interests</p>
+    </section>
+
+    <section class="highlight-banner">
+        <h2>20% Annualized Preferred Return</h2>
+        <p>Minimum Investment: $20,000 per project</p>
+    </section>
+
+    <section class="invest-content">
+        <div class="invest-section">
+            <h2>Investment Structure</h2>
+            <p>Each entitlement project will use a <strong>Single Entity Limited Liability Company (SELLC)</strong>. TrendAmerica LLC will be the Managing Member of the SELLC. Stakeholders will be Members of the SELLC with proportionate voting and approval rights and authority based on the percentage that their investment represents of the total funds raised for a project.</p>
+        </div>
+
+        <div class="key-terms">
+            <div class="term-card">
+                <h3>Minimum Investment</h3>
+                <p>Per project investment threshold</p>
+                <div class="value">$20,000</div>
+            </div>
+            <div class="term-card">
+                <h3>Annualized Preferred Return</h3>
+                <p>Target return for stakeholders</p>
+                <div class="value">20%</div>
+            </div>
+            <div class="term-card">
+                <h3>Expense Approval Threshold</h3>
+                <p>Requires 50% stakeholder approval</p>
+                <div class="value">$10,000+</div>
+            </div>
+            <div class="term-card">
+                <h3>Managing Member Fee</h3>
+                <p>Paid monthly over project duration</p>
+                <div class="value">20% of Total Funding</div>
+            </div>
+        </div>
+
+        <div class="stakeholder-rights">
+            <h3>Stakeholder Rights & Protections</h3>
+            <ul>
+                <li><strong>Voting Rights:</strong> Proportionate voting and approval rights based on investment percentage</li>
+                <li><strong>Expense Approval:</strong> Payment of project costs and expenses over $10,000 per line item requires 50% of total Stakeholder written approval</li>
+                <li><strong>Bank Account Access:</strong> Stakeholder funds deposited into bank account in the name of the SELLC</li>
+                <li><strong>Audit Rights:</strong> Stakeholders have the right to audit the bank account at any time</li>
+                <li><strong>Limited Liability Protection:</strong> Full LLC protections for all stakeholder investments</li>
+            </ul>
+        </div>
+
+        <div class="invest-section">
+            <h2>Project Funding Requirements</h2>
+            <p>Entitlement funding requirements are typically 10-20% of the land purchase price. Below are examples of funding requirements to entitle land to Tentative Subdivision or Plan Development Map Approval:</p>
+
+            <table class="funding-table">
+                <thead>
+                    <tr>
+                        <th>Land Purchase Price</th>
+                        <th>Entitlement Funding Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$1,000,000</td>
+                        <td>$150,000 - $200,000</td>
+                    </tr>
+                    <tr>
+                        <td>$3,000,000</td>
+                        <td>$250,000 - $300,000</td>
+                    </tr>
+                    <tr>
+                        <td>$5,000,000</td>
+                        <td>$350,000 - $400,000</td>
+                    </tr>
+                    <tr>
+                        <td>$7,000,000</td>
+                        <td>$450,000 - $500,000</td>
+                    </tr>
+                    <tr>
+                        <td>$10,000,000</td>
+                        <td>$550,000 - $600,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="invest-section">
+            <h2>Managing Member Compensation</h2>
+            <p>The Managing Member (TrendAmerica) shall be paid 20% of Total Entitlement Funding Required, paid monthly over the project duration:</p>
+            <ul>
+                <li><strong>Total Funding of $150,000 to $400,000:</strong> Paid over 12 months</li>
+                <li><strong>Total Funding of $401,000 and above:</strong> Paid over 18 months</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Important Note on Map Validity</h3>
+            <p>In California, a Tentative Subdivision or Planned Development Map once approved by a City or County does not expire for <strong>2 years</strong> thereafter, and can be extended an additional <strong>3 years</strong> if needed, for a total of <strong>5 years</strong>.</p>
+            <p>The Homebuilder will be solely responsible for taking the approved Tentative Subdivision or Planned Development Map to a Final Map, which is a civil engineering process requiring City or County Planning Department Staff plan approval and typically takes 6-9 months.</p>
+            <p>The conditions and terms in the Purchase/Option and Sale Agreement we execute with the Homebuilder will typically require closing <strong>30-60 days</strong> after execution of the Agreement.</p>
+        </div>
+
+        <div class="invest-section">
+            <h2>Double Escrow Close</h2>
+            <p>We use a <strong>Double Escrow Close</strong> structure where we use the new Homebuilder's purchase money — <em>not Stakeholder Funds</em> — to pay the underlying land owner when we roll-over the deal.</p>
+            <p>This approach provides two key benefits:</p>
+            <ul>
+                <li><strong>Less Up-Front Capital Investment</strong> required from stakeholders</li>
+                <li><strong>Full Control</strong> over the property during the entitlement process, marketing, negotiating, and re-sale to new homebuilders</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Learn More?</h2>
+            <p>Contact us to discuss investment opportunities and current projects</p>
+            <a href="index.html#contact" class="btn">Contact TrendAmerica</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TrendAmerica. All rights reserved.</p>
+    </footer>
+</body>
+</html>

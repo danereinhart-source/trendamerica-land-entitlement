@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Acquisitions & Entitlements | TrendAmerica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-blue: #1a4b8c;
+            --dark-blue: #0d2847;
+            --accent-blue: #2d7dd2;
+            --gold: #c9a227;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --dark-gray: #1f2937;
+        }
+        body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: var(--dark-gray); }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        header {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon {
+            width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 800; font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--primary-blue); }
+        .logo-text span { color: var(--gold); }
+        .back-btn {
+            background: var(--primary-blue); color: white;
+            padding: 10px 25px; border-radius: 5px;
+            text-decoration: none; font-weight: 600;
+        }
+        .back-btn:hover { background: var(--dark-blue); }
+
+        .projects-hero {
+            background: linear-gradient(135deg, rgba(13, 40, 71, 0.95), rgba(26, 75, 140, 0.9)), url('Subdivision Map 5.png') center/cover;
+            color: white; padding: 100px 5%; text-align: center;
+        }
+        .projects-hero h1 { font-size: 3rem; margin-bottom: 15px; }
+        .projects-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        .stats-banner {
+            background: var(--gold);
+            padding: 40px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-item h3 { font-size: 3.5rem; color: var(--dark-blue); margin-bottom: 5px; }
+        .stat-item p { color: var(--dark-blue); font-weight: 600; font-size: 1.1rem; }
+
+        .content-section {
+            max-width: 1200px; margin: 0 auto; padding: 60px 5%;
+        }
+        .section-title {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .section-subtitle {
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border-top: 4px solid var(--primary-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        .project-content {
+            padding: 25px;
+        }
+        .project-type {
+            display: inline-block;
+            background: var(--light-gray);
+            color: var(--primary-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .project-units {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .project-location {
+            color: var(--dark-gray);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .project-city {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        .project-city i {
+            color: var(--primary-blue);
+            margin-right: 5px;
+        }
+
+        .region-section {
+            margin-bottom: 50px;
+        }
+        .region-title {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--gold);
+            display: inline-block;
+        }
+
+        .highlight-box {
+            background: var(--dark-blue);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 50px 0;
+        }
+        .highlight-box h3 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .highlight-box p {
+            opacity: 0.95;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 5%;
+            background: var(--light-gray);
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        .cta-section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+        .btn:hover { background: var(--dark-blue); }
+        .btn-gold {
+            background: var(--gold);
+            color: var(--dark-blue);
+        }
+        .btn-gold:hover { background: #d4ad2e; }
+
+        footer {
+            background: var(--dark-gray); color: white;
+            padding: 30px 5%; text-align: center;
+            margin-top: 60px;
+        }
+        footer p { opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            .stats-banner { gap: 40px; }
+            .stat-item h3 { font-size: 2.5rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .projects-hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">TA</div>
+            <div class="logo-text">TREND<span>AMERICA</span></div>
+        </a>
+        <a href="index.html#projects" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </header>
+
+    <section class="projects-hero">
+        <h1>Land Acquisitions & Entitlements</h1>
+        <p>A proven track record of successful residential subdivision projects across California and Nevada</p>
+    </section>
+
+    <section class="stats-banner">
+        <div class="stat-item">
+            <h3>17</h3>
+            <p>Subdivisions</p>
+        </div>
+        <div class="stat-item">
+            <h3>2,550</h3>
+            <p>Total Lots</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Complete Project Portfolio</h2>
+        <p class="section-subtitle">Our team has successfully acquired and entitled properties across multiple high-demand markets</p>
+
+        <div class="region-section">
+            <h3 class="region-title"><i class="fas fa-map-marker-alt"></i> San Diego County</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Townhouse</span>
+                        <div class="project-units">36 Units</div>
+                        <div class="project-location">Townhouse Development</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> San Diego County, CA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="region-section">
+            <h3 class="region-title"><i class="fas fa-map-marker-alt"></i> San Marcos, CA</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">101 Lots</div>
+                        <div class="project-location">Aberdeen Avenue</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> San Marcos, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">58 Units</div>
+                        <div class="project-location">Bougher Road</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> San Marcos, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">14 Lots</div>
+                        <div class="project-location">Oleander Avenue</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> San Marcos, CA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="region-section">
+            <h3 class="region-title"><i class="fas fa-map-marker-alt"></i> Vista, CA</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Mixed (SF & TH)</span>
+                        <div class="project-units">103 Units</div>
+                        <div class="project-location">East Vista Way / Taylor Street / Foothill Drive Assemblage</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Vista, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Townhouse</span>
+                        <div class="project-units">12 Units</div>
+                        <div class="project-location">Old Taylor Road</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Vista, CA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="region-section">
+            <h3 class="region-title"><i class="fas fa-map-marker-alt"></i> Lake Elsinore, CA</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">612 Lots</div>
+                        <div class="project-location">McVicker Canyon Park Road</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Lake Elsinore, CA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="region-section">
+            <h3 class="region-title"><i class="fas fa-map-marker-alt"></i> Indio, CA</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">408 Lots</div>
+                        <div class="project-location">Golf Center Parkway</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Indio, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">132 Lots</div>
+                        <div class="project-location">42nd Avenue</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Indio, CA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="region-section">
+            <h3 class="region-title"><i class="fas fa-map-marker-alt"></i> Menifee, CA</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">180 Lots</div>
+                        <div class="project-location">Garbani Road</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Menifee, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">180 Lots</div>
+                        <div class="project-location">Holland Road</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Menifee, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">178 Lots</div>
+                        <div class="project-location">Bell Mountain Road</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Menifee, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">114 Lots</div>
+                        <div class="project-location">Lindenberger Road</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Menifee, CA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="region-section">
+            <h3 class="region-title"><i class="fas fa-map-marker-alt"></i> Hayward, CA</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">102 Lots</div>
+                        <div class="project-location">Harder Road</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Hayward, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">46 Lots</div>
+                        <div class="project-location">Bayview Avenue</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Hayward, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">40 Lots</div>
+                        <div class="project-location">Huntwood Avenue</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Hayward, CA</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">22 Lots</div>
+                        <div class="project-location">Kelly Street</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Hayward, CA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="region-section">
+            <h3 class="region-title"><i class="fas fa-map-marker-alt"></i> Las Vegas, NV</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="project-type">Single Family</span>
+                        <div class="project-units">212 Lots</div>
+                        <div class="project-location">Washington Avenue</div>
+                        <div class="project-city"><i class="fas fa-location-dot"></i> Las Vegas, NV</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Paper Lots = Lower Risk</h3>
+            <p>We sell "Paper Lots" — approved subdivision maps ready for homebuilders. We don't install infrastructure or put a shovel in the ground. This approach minimizes risk while maximizing returns for our stakeholders.</p>
+        </div>
+
+        <div class="cta-section">
+            <h2>Interested in Our Next Project?</h2>
+            <p>Learn about investment opportunities and how you can participate in future land entitlement projects</p>
+            <a href="index.html#invest" class="btn btn-gold">Investment Structure</a>
+            <a href="index.html#contact" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TrendAmerica. All rights reserved.</p>
+    </footer>
+</body>
+</html>
