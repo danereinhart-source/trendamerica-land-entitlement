@@ -51,6 +51,21 @@
             background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
             color: white; padding: 80px 5%; text-align: center;
         }
+        .bio-hero-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 25px;
+            border: 4px solid var(--gold);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .bio-hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+        }
         .bio-hero h1 { font-size: 3rem; margin-bottom: 10px; }
         .bio-hero .title { font-size: 1.3rem; opacity: 0.9; color: var(--gold); }
 
@@ -115,6 +130,9 @@
     </header>
 
     <section class="bio-hero">
+        <div class="bio-hero-photo">
+            <img src="mark pro headshot.png" alt="Mark Goodman">
+        </div>
         <h1>Mark Goodman</h1>
         <p class="title">Vice President | Senior Project Planner</p>
     </section>
