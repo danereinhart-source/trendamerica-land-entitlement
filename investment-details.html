@@ -112,6 +112,7 @@
 
         .funding-table {
             width: 100%;
+            table-layout: fixed;
             border-collapse: collapse;
             margin: 30px 0;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -197,17 +198,16 @@
 
         @media (max-width: 768px) {
             .key-terms { grid-template-columns: 1fr; }
-            .funding-table { font-size: 0.85rem; overflow-x: auto; display: block; }
+            .funding-table { font-size: 0.85rem; }
             .funding-table th, .funding-table td { padding: 10px 12px; }
         }
-        .funding-table th { white-space: nowrap; }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html" class="logo">
             <div class="logo-icon">TA</div>
-            <div class="logo-text">TREND<span>AMERICA</span></div>
+            <div class="logo-text" style="line-height: 1.05;">TREND<span>AMERICA</span><div style="font-size: 0.8rem; letter-spacing: 1px;">Land Entitlements</div></div>
         </a>
         <a href="index.html#invest" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Overview</a>
     </header>
@@ -225,53 +225,65 @@
     <section class="invest-content">
         <div class="invest-section">
             <h2>Investment Structure</h2>
-            <p>Each entitlement project will use a <strong>Single Entity Limited Liability Company (SELLC)</strong>. TrendAmericaLand LLC will be the Managing Member of the SELLC. Stakeholders will be Members of the SELLC with proportionate voting and approval rights and authority based on the percentage that their investment represents of the total funds raised for a project.</p>
+            <p>Each entitlement project will use a <strong>Single Entity Limited Liability Company (SELLC)</strong>. TrendAmerica Land Entitlements LLC will be the Manager of the SELLC. Investors will be Members of the SELLC, holding membership interests proportionate to the percentage that their investment represents of the total funds raised for a project. The Manager handles day-to-day operations and the entitlement process; investors are passive, with consent rights limited to the major decisions described below.</p>
         </div>
 
         <div class="key-terms">
             <div class="term-card">
                 <h3>Minimum Investment</h3>
+                <div class="value" style="margin-top: 0; margin-bottom: 10px;">$20,000</div>
                 <p>Per project investment threshold</p>
-                <div class="value">$20,000</div>
             </div>
             <div class="term-card">
-                <h3>Annualized Preferred Return</h3>
-                <p>Target return for stakeholders</p>
-                <div class="value">20%</div>
+                <h3>Targeted Preferred Return</h3>
+                <div class="value" style="margin-top: 0; margin-bottom: 10px;">20%</div>
+                <p>Investors receive 100% of all project profits until they earn a 20% annualized return on their investment. Further potential upside follows a performance-based and incentive-aligned waterfall structure, as described below</p>
             </div>
             <div class="term-card">
-                <h3>Expense Approval Threshold</h3>
-                <p>Requires 40% of total stakeholder's approval</p>
-                <div class="value">$10,000+</div>
+                <h3>Acquisition Fee</h3>
+                <div class="value" style="margin-top: 0; margin-bottom: 10px;">1% of Land Purchase Price</div>
+                <p>Earned only when a project successfully closes</p>
             </div>
             <div class="term-card">
-                <h3>Managing Member Fee</h3>
-                <p>Paid monthly per project over each project's duration</p>
-                <div class="value">20% of Total Funding</div>
+                <h3>Entitlement Management Fee</h3>
+                <div class="value" style="margin-top: 0; margin-bottom: 10px;">10% of Approved Entitlement Budget</div>
+                <p>Paid over the course of the entitlement period as the work is performed</p>
             </div>
         </div>
 
+        <div class="invest-section">
+            <h2>Investor Returns: A Tiered Structure</h2>
+            <p style="color: var(--primary-blue); font-weight: 700;">Distributions from each project's sale follow a waterfall based on the annualized return investors achieve on a project:</p>
+            <ol style="color: var(--gray); margin-left: 20px; margin-bottom: 15px; line-height: 1.8;">
+                <li style="margin-bottom: 10px;">Investors first receive <strong style="color: var(--gold);">100% of distributions</strong> until they have received their capital back <strong style="color: var(--primary-blue);">plus</strong> a <strong style="color: var(--gold);">20% annualized preferred return</strong>.</li>
+                <li style="margin-bottom: 10px;">Above a <strong style="color: var(--primary-blue);">20% return</strong>, profits are split 70% to investors and 30% to the Manager, until investors reach a <strong style="color: var(--gold);">25% annualized return</strong>.</li>
+                <li style="margin-bottom: 10px;">Above a <strong style="color: var(--primary-blue);">25% return</strong>, profits are split 60% to investors and 40% to the Manager, until investors reach a <strong style="color: var(--gold);">30% annualized return</strong>.</li>
+                <li style="margin-bottom: 10px;">Above a <strong style="color: var(--primary-blue);">30% return</strong>, profits are split 50% to investors and 50% to the Manager. Returns in this tier are <strong style="color: var(--gold);">uncapped</strong> and subject to the same equal split — a performance incentive to push each project's return as high as possible, with every additional dollar <strong style="color: var(--gold);">shared equally</strong> between the principals and stakeholders.</li>
+            </ol>
+            <p style="font-size: 0.85rem; color: #9ca3af;">Note: The preferred return and each hurdle are priorities in the distribution waterfall. They are targets, not guaranteed payments and not a debt of the Manager. Returns depend on each project's outcome and are not guaranteed.</p>
+        </div>
+
         <div class="stakeholder-rights">
-            <h3>Stakeholder Rights & Protections</h3>
+            <h3>Investor Rights and Transparency</h3>
             <ul>
-                <li><strong>Voting Rights:</strong> Proportionate voting and approval rights based on investment percentage</li>
-                <li><strong>Expense Approval:</strong> Payment of project costs and expenses over $10,000 per line item requires 40% of total Stakeholder written approval</li>
-                <li><strong>Bank Account Access:</strong> Stakeholder funds deposited into bank account in the name of the SELLC</li>
-                <li><strong>Audit Rights:</strong> Stakeholders have the right to audit the bank account at any time</li>
-                <li><strong>Limited Liability Protection:</strong> Full LLC protections for all stakeholder investments</li>
+                <li><strong>Reporting:</strong> Quarterly project updates, annual financial statements, and an annual Schedule K-1 for each project.</li>
+                <li><strong>Major-Decision Consent:</strong> Investor approval is required for major decisions such as selling the project, incurring project-level debt, changing the fee or distribution structure, or entering related-party transactions.</li>
+                <li><strong>Inspection Rights:</strong> Investors may review the project entity's books and records on reasonable notice.</li>
+                <li><strong>Limited Liability:</strong> Each project is held in its own single-purpose LLC, and an investor's liability is limited to their investment in that entity.</li>
             </ul>
+            <p style="margin-top: 15px; opacity: 0.95;">The Manager handles day-to-day operations and the entitlement process. Investors are passive stakeholders and not actively involved in routine project management operations.</p>
         </div>
 
         <div class="invest-section">
             <h2>Project Funding Requirements</h2>
-            <p>Below are TrendAmerica Project Funding Requirement Examples to Entitle Land to Tentative Subdivision or Plan Development Map Approval (as of 2.13.26):</p>
+            <p>Below are TrendAmerica Project Funding Requirement Examples to Entitle Land to Tentative Subdivision or Plan Development Map Approval. Investor capital funds the land acquisition deposits and entitlement costs; the balance of the land purchase price is paid from the homebuilder's proceeds at the double-escrow close:</p>
 
             <table class="funding-table">
                 <thead>
                     <tr>
                         <th>Land Purchase Price</th>
                         <th>Entitlement Funding Required</th>
-                        <th>Land Acquisition Non-Credited Extension Deposits</th>
+                        <th>Purchase Contract Extension Deposits</th>
                         <th>Total Investment</th>
                     </tr>
                 </thead>
@@ -308,12 +320,18 @@
                     </tr>
                 </tbody>
             </table>
-            <p style="font-size: 0.9rem; color: var(--gray); margin-top: -10px;"><em>The above land acquisition transactions include deposits which are credited against the Purchase Price. Those amounts are accounted for in the Total Investment figures estimated above. The above figures are estimates based upon experience, keeping in mind that every deal is unique and different.</em></p>
+            <p style="font-size: 0.9rem; color: var(--gray); margin-top: -10px;"><em>The figures above are estimates only, based on the past experience of TrendAmerica and its principals; the actual funding required is determined on a project-by-project basis and may vary across the funding requirement spectrum shown. The above land acquisition transactions include deposits which are credited against the Purchase Price. Those amounts are accounted for in the Total Investment figures estimated above. The above figures are estimates based upon experience, keeping in mind that every deal is unique and different.</em></p>
         </div>
 
         <div class="invest-section">
-            <h2>Managing Member Compensation</h2>
-            <p>The Managing Member (TrendAmerica) shall be paid 20% of Total Entitlement Funding Required (Not Including Non-Credited Deposits Funding), paid monthly over the stated project duration.</p>
+            <h2>Manager Compensation</h2>
+            <ul>
+                <li><strong>Acquisition Fee:</strong> 1% of a project's land purchase price, earned only when a project successfully closes. Nothing is charged on projects that do not close.</li>
+                <li><strong>Entitlement Management Fee:</strong> 10% of a project's approved entitlement budget, paid over the entitlement period as the work is performed.</li>
+                <li><strong>No disposition fee.</strong></li>
+                <li>If a Manager affiliate brokers the sale of an entitled project to a homebuilder, any commission is at or below market rate and is disclosed as a related-party transaction.</li>
+            </ul>
+            <p>The Manager's primary compensation is its share of project profits above the preferred return (the promote), which aligns the Manager's incentives with investors.</p>
         </div>
 
         <div class="info-box">
@@ -324,13 +342,13 @@
 
         <div class="invest-section">
             <h2>Double Escrow Close</h2>
-            <p>We use a <strong>Double Escrow Close</strong> structure where we use the new Homebuilder's purchase money — <em>not Stakeholder Funds</em> — to pay the underlying land owner when we roll-over the deal.</p>
+            <p>We use a <strong>Double Escrow Close</strong> structure where we use the new Homebuilder's purchase money — <em>not Investor Funds</em> — to pay the underlying land owner when we roll-over the deal. Investor capital funds the deposits and entitlement costs, and the balance of the land purchase price is paid from the homebuilder's proceeds at the double-escrow close.</p>
             <p>This approach provides two key benefits:</p>
             <ul>
-                <li><strong>Less Up-Front Capital Investment</strong> required from stakeholders</li>
+                <li><strong>Less Up-Front Capital Investment</strong> required from investors</li>
                 <li><strong>Full Control</strong> over the property during the entitlement process, marketing, negotiating, and re-sale to new homebuilders</li>
-                <li>The conditions and terms in the TrendAmerica/Homebuilder Sales Agreement we execute with the Homebuilder will typically require closing <strong>30-60 days</strong> after execution of the Sales Agreement.</li>
             </ul>
+            <p>The conditions and terms in the TrendAmerica/Homebuilder Sales Agreement we execute with the Homebuilder will typically require closing <strong>30-60 days</strong> after execution of the Sales Agreement.</p>
         </div>
 
         <div class="cta-section">
@@ -338,10 +356,16 @@
             <p>Contact us to discuss investment opportunities and current projects</p>
             <a href="index.html#contact" class="btn">Contact TrendAmerica</a>
         </div>
+
+        <div class="info-box">
+            <h3>Important Disclosures</h3>
+            <p style="font-size: 0.9rem;">This material is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Any offer or sale will be made only to accredited investors as defined under Rule 501 of Regulation D, in reliance on Rule 506(c), and only through a confidential Private Placement Memorandum, operating agreement, and subscription agreement for a specific project. Accredited status will be verified as required under Rule 506(c). Each project is a separate, single-purpose entity and a separate investment. These investments are illiquid, long-term, and high-risk, and an investor could lose some or all of their capital. The preferred return and any target returns are objectives only and are not guaranteed; if a project does not generate sufficient cash, they are not paid. The prior experience and transactions of TrendAmerica and/or its principals are not indicative nor predictive of future results. Prospective investors should rely solely on the offering documents and consult their own advisors. TrendAmerica is not a registered broker-dealer or investment adviser.</p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 TrendAmerica. All rights reserved.</p>
+        <p style="font-size: 0.8rem; line-height: 1.7; margin-bottom: 15px; text-align: left; max-width: 1000px; margin-left: auto; margin-right: auto;">This website is for informational purposes only and is not an offer to sell or a solicitation of an offer to buy any security. Securities are offered only to accredited investors, and only by means of a Private Placement Memorandum and related subscription documents for a specific project. Investments in land entitlement are speculative, illiquid, and involve a high degree of risk, including the possible loss of the entire investment. Any returns described, including the preferred return, are targets and are not guaranteed. Past performance, including the prior experience of TrendAmerica's principals at other companies, does not indicate future results. Forward-looking statements are subject to risks and uncertainties and may not occur. No federal or state securities regulator has approved this offering or these materials. TrendAmerica is not a registered broker-dealer or investment adviser. Prospective investors should consult their own legal, tax, and financial advisors.</p>
+        <p>&copy; 2026 TrendAmerica. All rights reserved.</p>
     </footer>
 </body>
 </html>
